@@ -1,1 +1,15 @@
 sample_id,decision_id,expected,severity,rationale
+BDD26,d1,label=traffic_light x1 (đầu đèn xanh trên cột trái; đèn đi bộ và đèn xa dưới 10 px không vẽ),major,mục 5 ngưỡng ban đêm và rule đèn đi bộ
+BDD26,d2,state=green,critical,đèn điều khiển làn xe mình; sai màu là lỗi dừng/đi
+BDD26,d3,relevance=relevant,critical,đèn của giao lộ gần nhất cho hướng đi thẳng
+BDD26,d4,geometry: box ôm đĩa đèn sáng không gồm quầng (tâm khoảng x=488 y=72; mỗi cạnh lệch ≤ 3 px),minor,mục 3 rule ban đêm
+BDD18,d1,không vẽ traffic_light cho hộp đèn đi bộ ở cột phải,major,mục 5 đèn đi bộ không vẽ
+BDD18,d2,không có traffic_light nào relevance=relevant,critical,đèn xanh xa thuộc giao lộ sau; gán relevant khiến planner cho xe đi qua vạch khi chưa biết tín hiệu
+BDD18,d3,tag image_escalate=có,major,mục 7 thấy vạch qua đường nhưng không thấy đầu đèn xe của giao lộ gần nhất
+BDD21,d1,label=traffic_light x1 (đầu đèn trên cần vươn; vỏ nhìn nghiêng bên trái và đốm sau cây không vẽ),major,mục 5 ngưỡng 20 px và rule nhìn nghiêng
+BDD21,d2,state=green,major,đèn sáng xanh rõ
+BDD21,d3,relevance khác not_relevant (relevant hoặc unknown + needs_review đều chấp nhận),major,đèn treo trên đường xe mình không có mũi tên rẽ
+BDD21,d4,geometry: box ôm vỏ đèn không gồm cần treo (tâm khoảng x=336 y=292; mỗi cạnh lệch ≤ 3 px),minor,mục 3 geometry ban ngày
+BDD11,d1,không vẽ traffic_light (hộp bàn tay đỏ là đèn đi bộ),major,mục 5 đèn đi bộ không vẽ
+BDD11,d2,tag image_escalate=có,major,mục 7 vạch qua đường phía trước nhưng không có đầu đèn xe
+BDD14,d1,không có box traffic_light và không có tag image_escalate,major,cao tốc không có giao lộ; kiểm tra không vẽ đèn phanh và không escalate thừa

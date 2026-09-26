@@ -1,1 +1,17 @@
 sample_id,split,tags,reason
+sample_id,split,tags,reason
+LISA01,example,normal;edge;conflict,Ba đầu đèn đỏ trên cùng một cần treo: đầu mũi tên rẽ trái (not_relevant khi xe đi thẳng) cạnh hai đầu đèn tròn (relevant); dạy rule signal_shape và relevance
+LISA30,example,normal;conflict,Cùng giao lộ với LISA01 nhưng đèn tròn đã xanh còn mũi tên trái vẫn đỏ; dạy rằng state của từng đầu đèn độc lập
+BDD12,example,edge;negative;conflict,Chỉ có đèn đi bộ bàn tay cam ở cột bên phải cạnh vạch qua đường; dạy rule không vẽ đèn đi bộ và gắn image_escalate
+BDD06,example,negative;normal,Cao tốc không có đèn tín hiệu chỉ có biển cảnh báo vàng; dạy trường hợp ảnh không vẽ gì và không escalate
+BDD02,calibration,edge;conflict;small_far,Nhiều đầu đèn ở nhiều khoảng cách và vài vỏ đèn nhìn nghiêng; thử rule ngưỡng kích thước và rule nhìn nghiêng
+BDD07,calibration,edge;conflict;small_far,Đèn trên cột trái và cần vươn phải cùng lúc đèn giao lộ xa; thử rule relevance theo giao lộ gần nhất
+BDD25,calibration,edge;low_visibility;small_far,Chạng vạng nhiều đèn xanh xa và đèn đường biển hiệu sáng; thử rule phân biệt đèn tín hiệu với nguồn sáng khác
+BDD17,calibration,low_visibility;small_far;negative,Mưa và kính đọng nước; thử rule phản chiếu và ngưỡng kích thước khi hình mờ
+BDD13,calibration,negative;normal,Phố có biển lớn và người đi bộ nhưng không rõ có đèn; thử việc annotator có vẽ nhầm vật thể khác không
+LISA15,calibration,edge;temporal;conflict,Frame giữa clip LISA khi đèn đang chuyển trạng thái; thử rule state khi đèn sáng mờ hoặc hai đèn cùng sáng
+BDD26,blind,normal;critical;low_visibility,Ban đêm một đầu đèn xanh gần trên cột trái cùng đèn đi bộ và đèn xa rất nhỏ
+BDD18,blind,critical;ambiguity;low_visibility;conflict,Ban đêm trước vạch qua đường chỉ thấy đèn đi bộ ở cột phải và đèn xanh rất xa của giao lộ sau
+BDD21,blind,edge;small_far,Ban ngày một đầu đèn xanh nhỏ treo trên cần vươn và đèn vỏ vàng nhìn nghiêng bên trái
+BDD11,blind,edge;negative;conflict,Góc phố có đèn đi bộ bàn tay đỏ nhưng không thấy đầu đèn xe điều khiển làn mình
+BDD14,blind,negative;normal,Cao tốc nhiều làn không có giao lộ và không có đèn tín hiệu
